@@ -72,8 +72,18 @@ filetype on
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Exit_OnlyWindow = 1
+let Tlist_Show_One_File = 1
 "  mapping for the <F3> key to toggle the taglist window
 nnoremap <silent> <F3> :TlistToggle<CR>
+
+" auto flush taglist
+map <F4> :TlistUpdate<CR>
+autocmd BufWritePost *.c,*.h,*.cpp call UpdateCtags()
+autocmd FileWritePost *.c,*.h,*.cpp call UpdateCtags()
+
+function! UpdateCtags()
+     TlistUpdate
+endfunction
 " ***************settings for taglist***************
 
 
