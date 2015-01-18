@@ -18,6 +18,7 @@ set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
 set autoindent
+set autowriteall
 " ***************settings for base vim***************
 
 " ***************settings for brackets complete***************
@@ -50,6 +51,9 @@ filetype plugin indent on
 " open a NERDTree automatically when vim starts up
 "autocmd vimenter * NERDTree
 
+" show hidden files and dirs
+let NERDTreeShowHidden=1
+
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -67,6 +71,7 @@ filetype on
 " open the window on the right hand side
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close=1
+let Tlist_Exit_OnlyWindow = 1
 "  mapping for the <F3> key to toggle the taglist window
 nnoremap <silent> <F3> :TlistToggle<CR>
 " ***************settings for taglist***************

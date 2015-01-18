@@ -22,7 +22,7 @@ cp -rf a_218 ~/.vim/bundle
 cp -rf cscope ~/.vim/bundle
 #: cscope usage
 #: 1. enter src dir
-#: 2. cscope -R
+#: 2. cscope -Rb
 #: 3. vi
 
 cp .vimrc ~/
