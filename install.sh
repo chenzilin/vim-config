@@ -49,3 +49,5 @@ cp -rf cscope ~/.vim/bundle
 
 #: install .vimrc
 cp .vimrc ~/
+
+echo "The installation is complete!"

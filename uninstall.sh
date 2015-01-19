@@ -11,3 +11,5 @@ rm -rf ~/.vim
 rm -rf ~/.vimrc
 mv ~/.vim-old ~/.vim
 mv ~/.vimrc-old ~/.vimrc
+
+echo "The uninstallation is complete!"
