@@ -8,7 +8,7 @@ else
 fi
 
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim vim-youcompleteme exuberant-ctags cscope
+	sudo apt-get install -y vim exuberant-ctags cscope
 else
 	echo "Your computer system is not Ubuntu or Debian, the installation fails!"
 	exit 1
