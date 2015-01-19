@@ -1,6 +1,12 @@
-my vim configure
+my vim config
 
 usage:
-1. $: sudo ./pre-install.sh
 
-2. $: ./install.sh
+install:
+
+$: ./install.sh
+
+uninstall:
+
+$: ./uninstall.sh
+
