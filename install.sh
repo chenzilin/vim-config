@@ -9,11 +9,18 @@ cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 rm -rf vim-pathogen
 
 #: install nerdtree
-cd ~/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree.git
+cp -rf nerdtree ~/.vim/bundle
+rm -rf nerdtree
 
 #: install taglist
 cp -rf taglist_46  ~/.vim/bundle
+#: ctags usage
+#: 1. enter src dir
+#: 2. ctags -R
+#: 3. vi
+#: 4. Ctrl＋]
+#: 5. Ctrl＋T
 
 #: install a
 cp -rf a_218 ~/.vim/bundle
