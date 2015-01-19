@@ -17,8 +17,20 @@ set autowrite
 set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
+set autoread
 set autoindent
 set autowriteall
+
+" highlight current line and column
+set cursorline
+"hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+""set cursorcolumn
+""hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+
+" set color scheme
+" /usr/share/vim/vim74/colors
+"colorscheme blue
+
 " ***************settings for base vim***************
 
 " ***************settings for brackets complete***************
@@ -53,6 +65,7 @@ filetype plugin indent on
 
 " show hidden files and dirs
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.o$', '\.swp$', '\.git', '\.svn']
 
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
