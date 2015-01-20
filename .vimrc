@@ -24,8 +24,8 @@ set autowriteall
 " highlight current line and column
 set cursorline
 "hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-""set cursorcolumn
-""hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+set cursorcolumn
+hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
 
 " set color scheme
 " /usr/share/vim/vim74/colors
