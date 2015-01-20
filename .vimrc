@@ -1,3 +1,18 @@
+" ***************usage for ctags and cscope***************
+" #: cscope usage
+" #: 1. enter src dir
+" #: 2. cscope -Rb
+" #: 3. vi
+"
+" #: ctags usage
+" #: 1. enter src dir
+" #: 2. ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .
+" #: 3. vi
+" #: 4. Ctrl＋]
+" #: 5. Ctrl＋T
+" ***************usage for ctags and cscope***************
+
+
 " ***************settings for base vim***************
 set ruler
 set number
@@ -34,14 +49,14 @@ hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
 " ***************settings for base vim***************
 
 " ***************settings for brackets complete***************
-:inoremap ( ()<ESC>i
-:inoremap ) <c-r>=ClosePair(')')<CR>
+":inoremap ( ()<ESC>i
+":inoremap ) <c-r>=ClosePair(')')<CR> " commented for echofunc
 :inoremap { {<CR>}<ESC>O
 :inoremap } <c-r>=ClosePair('}')<CR>
 :inoremap [ []<ESC>i
 :inoremap ] <c-r>=ClosePair(']')<CR>
-:inoremap " ""<ESC>i
-:inoremap ' ''<ESC>i
+":inoremap " ""<ESC>i
+":inoremap ' ''<ESC>i
 
 function! ClosePair(char)
  if getline('.')[col('.') - 1] == a:char
@@ -118,3 +133,20 @@ if has('cscope')
   command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
 endif
 " ***************settings for cscope***************
+
+" ***************settings for OmniCppComplete***************
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+" build tags of your own project with Ctrl-F12
+map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" ***************settings for OmniCppComplete***************
