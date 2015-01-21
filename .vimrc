@@ -149,4 +149,6 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 " build tags of your own project with F5
 map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q . && cscope -Rb<CR>
+" generate local usr include
+set tags+=~/.vim/ctags-list/usr-include
 " ***************settings for OmniCppComplete***************

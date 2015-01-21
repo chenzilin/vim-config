@@ -16,7 +16,7 @@ fi
 
 mv ~/.vim ~/.vim-old
 mv ~/.vimrc ~/.vimrc-old
-mkdir -p ~/.vim/autoload ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ctags-list
 
 #: install .vimrc
 cp .vimrc ~/
@@ -28,7 +28,7 @@ rm -rf vim-pathogen
 
 #: install nerdtree
 git clone https://github.com/scrooloose/nerdtree.git
-mv -rf nerdtree ~/.vim/bundle
+mv nerdtree ~/.vim/bundle/
 
 #: install echofunc
 git clone https://github.com/mbbill/echofunc.git
@@ -47,5 +47,8 @@ cp -rf cscope ~/.vim/bundle
 
 #: install a
 cp -rf a_218 ~/.vim/bundle
+
+cd /usr/include/
+ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/ctags-list/usr-include .
 
 echo "The installation is complete!"
