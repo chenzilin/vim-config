@@ -43,6 +43,10 @@ mv OmniCppComplete ~/.vim/bundle/
 git clone https://github.com/DataWraith/auto_mkdir.git
 mv auto_mkdir ~/.vim/bundle/
 
+#: install qml syntax highlighting
+git clone https://github.com/peterhoeg/vim-qml.git
+mv vim-qml ~/.vim/bundle/
+
 #: install nerdcommenter
 #git clone https://github.com/scrooloose/nerdcommenter.git
 #mv nerdcommenter ~/.vim/bundle/
