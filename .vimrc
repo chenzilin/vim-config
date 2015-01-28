@@ -3,6 +3,7 @@
 " #: 1. enter src dir
 " #: 2. cscope -Rb
 " #: 3. vi
+" #: 4. cs help
 "
 " #: ctags usage
 " #: 1. enter src dir
@@ -117,20 +118,12 @@ endfunction
 
 " ***************settings for cscope***************
 if has('cscope')
-  set cscopetag cscopeverbose
-
-  if has('quickfix')
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-  endif
-
-  cnoreabbrev csa cs add
-  cnoreabbrev csf cs find
-  cnoreabbrev csk cs kill
-  cnoreabbrev csr cs reset
-  cnoreabbrev css cs show
-  cnoreabbrev csh cs help
-
-  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+   cnoreabbrev csa cs add
+   cnoreabbrev csf cs find
+   cnoreabbrev csk cs kill
+   cnoreabbrev csr cs reset
+   cnoreabbrev css cs show
+   cnoreabbrev csh cs help
 endif
 " ***************settings for cscope***************
 
