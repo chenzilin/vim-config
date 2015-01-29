@@ -118,12 +118,64 @@ endfunction
 
 " ***************settings for cscope***************
 if has('cscope')
-   cnoreabbrev csa cs add
-   cnoreabbrev csf cs find
-   cnoreabbrev csk cs kill
-   cnoreabbrev csr cs reset
-   cnoreabbrev css cs show
-   cnoreabbrev csh cs help
+
+    set csto=0
+    set cscopetag
+   
+    if filereadable("cscope.out")
+        cs add cscope.out
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+   
+    set cscopeverbose
+    
+    cnoreabbrev csa cs add
+    cnoreabbrev csf cs find
+    cnoreabbrev csk cs kill
+    cnoreabbrev csr cs reset
+    cnoreabbrev css cs show
+    cnoreabbrev csh cs help
+   
+    """"""""""""" My cscope/vim key mappings
+    "
+    " cscope commands:
+    " add  : Add a new database             (Usage: add file|dir [pre-path] [flags])
+    " find : Query for a pattern            (Usage: find c|d|e|f|g|i|s|t name)
+    "     c: Find functions calling this function
+    "     d: Find functions called by this function
+    "     e: Find this egrep pattern
+    "     f: Find this file
+    "     g: Find this definition
+    "     i: Find files #including this file
+    "     s: Find this C symbol
+    "     t: Find this text string
+    "     help : Show this message              (Usage: help)
+    "     kill : Kill a connection              (Usage: kill #)
+    "     reset: Reinit all connections         (Usage: reset)
+    "     show : Show connections               (Usage: show)
+    "
+    " The following maps all invoke one of the following cscope search types:
+    "
+    "   's'   symbol: find all references to the token under cursor
+    "   'g'   global: find global definition(s) of the token under cursor
+    "   'c'   calls:  find all calls to the function name under cursor
+    "   't'   text:   find all instances of the text under cursor
+    "   'e'   egrep:  egrep search for the word under cursor
+    "   'f'   file:   open the filename under cursor
+    "   'i'   includes: find files that include the filename under cursor
+    "   'd'   called: find functions that function under cursor calls
+    
+    map <F4> :cs find t <C-R>=expand("<cword>")<CR><CR>
+    map <F12>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+    map <F12>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    map <F12>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    map <F12>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    map <F12>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    map <F12>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    map <F12>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    map <F12>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    
 endif
 " ***************settings for cscope***************
 

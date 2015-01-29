@@ -54,9 +54,6 @@ mv vim-qml ~/.vim/bundle/
 #: install taglist
 cp -rf taglist_46  ~/.vim/bundle
 
-#: install cscope
-cp -rf cscope ~/.vim/bundle
-
 #: install a
 cp -rf a_218 ~/.vim/bundle
 
