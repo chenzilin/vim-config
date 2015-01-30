@@ -121,7 +121,8 @@ if has('cscope')
 
     set csto=0
     set cscopetag
-   
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+
     if filereadable("cscope.out")
         cs add cscope.out
     elseif $CSCOPE_DB != ""
@@ -166,16 +167,17 @@ if has('cscope')
     "   'i'   includes: find files that include the filename under cursor
     "   'd'   called: find functions that function under cursor calls
     
-    map <F4> :cs find t <C-R>=expand("<cword>")<CR><CR>
-    map <F12>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-    map <F12>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-    map <F12>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-    map <F12>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-    map <F12>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-    map <F12>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-    map <F12>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    map <F12>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-    
+    map <F4> :cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+    map <F12>s :cs find s <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+    map <F12>g :cs find g <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+    map <F12>c :cs find c <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+    map <F12>t :cs find t <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+    map <F12>e :cs find e <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+    map <F12>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:cw<CR>
+    map <F12>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>:cw<CR>
+    map <F12>d :cs find d <C-R>=expand("<cword>")<CR><CR>:cw<CR>
+   
+    map <F6> :cclose<CR>
 endif
 " ***************settings for cscope***************
 
