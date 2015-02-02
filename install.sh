@@ -48,8 +48,8 @@ git clone https://github.com/peterhoeg/vim-qml.git
 mv vim-qml ~/.vim/bundle/
 
 #: install nerdcommenter
-#git clone https://github.com/scrooloose/nerdcommenter.git
-#mv nerdcommenter ~/.vim/bundle/
+git clone https://github.com/scrooloose/nerdcommenter.git
+mv nerdcommenter ~/.vim/bundle/
 
 #: install taglist
 cp -rf taglist_46  ~/.vim/bundle

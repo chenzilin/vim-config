@@ -14,6 +14,52 @@
 " ***************usage for ctags and cscope***************
 
 
+" ***************usage for NERD Commenter***************
+" [count]|<Leader>|cc |NERDComComment|
+" Comment out the current line or text selected in visual mode.
+"
+" [count]|<Leader>|cn |NERDComNestedComment|
+" Same as |<Leader>|cc but forces nesting.
+"
+" [count]|<Leader>|c<space> |NERDComToggleComment|
+" Toggles the comment state of the selected line(s). If the topmost selected
+" line is commented, all selected lines are uncommented and vice versa.
+"
+" [count]|<Leader>|cm |NERDComMinimalComment|
+" Comments the given lines using only one set of multipart delimiters.
+"
+" [count]|<Leader>|ci |NERDComInvertComment|
+" Toggles the comment state of the selected line(s) individually.
+" [count]|<Leader>|cs |NERDComSexyComment|
+" Comments out the selected lines ``sexily''
+"
+" [count]|<Leader>|cy |NERDComYankComment|
+" Same as |<Leader>|cc except that the commented line(s) are yanked first.
+"
+" |<Leader>|c$ |NERDComEOLComment|
+" Comments the current line from the cursor to the end of line.
+"
+" |<Leader>|cA |NERDComAppendComment|
+" Adds comment delimiters to the end of line and goes into insert mode between them.
+"
+" |NERDComInsertComment|
+" Adds comment delimiters at the current cursor position and inserts between.
+" Disabled by default.
+"
+" |<Leader>|ca |NERDComAltDelim|
+" Switches to the alternative set of delimiters.
+" [count]|<Leader>|cl
+" [count]|<Leader>|cb    |NERDComAlignedComment|
+" Same as |NERDComComment| except that the delimiters are aligned down the
+" left side (|<Leader>|cl) or both sides (|<Leader>|cb).
+"
+" [count]|<Leader>|cu |NERDComUncommentLine|
+" Uncomments the selected line(s).
+"
+" With the optional repeat.vim plugin (vimscript #2136), the mappings can also be repeated via |.|
+" ***************usage for NERD Commenter***************
+
+
 " ***************settings for base vim***************
 set ruler
 set number
@@ -199,3 +245,8 @@ map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q . && csco
 " generate local usr include
 set tags+=~/.vim/ctags-list/usr-include
 " ***************settings for OmniCppComplete***************
+
+
+" ***************settings for NERD Commenter***************
+let mapleader=","
+" ***************settings for NERD Commenter***************
