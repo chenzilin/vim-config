@@ -7,6 +7,7 @@ else
 	exit 1
 fi
 
+#: install base debs
 if which apt-get >/dev/null; then
 	sudo apt-get install -y vim exuberant-ctags cscope
 else
@@ -14,8 +15,15 @@ else
 	exit 1
 fi
 
-mv ~/.vim ~/.vim-old
-mv ~/.vimrc ~/.vimrc-old
+#: backup origin data
+if [ -d ~/.vim ]; then
+	mv ~/.vim ~/.vim-old
+fi
+if [ -f ~/.vimrc ]; then
+	mv ~/.vimrc ~/.vimrc-old
+fi
+
+#: create new dirs to config vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ctags-list
 
 #: install .vimrc

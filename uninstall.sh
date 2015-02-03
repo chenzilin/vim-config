@@ -7,9 +7,20 @@ else
 	exit 1
 fi
 
-rm -rf ~/.vim
-rm -rf ~/.vimrc
-mv ~/.vim-old ~/.vim
-mv ~/.vimrc-old ~/.vimrc
+#: remove config info
+if [ -d ~/.vim ]; then
+	rm -rf ~/.vim
+fi
+if [ -f ~/.vimrc ]; then
+	rm -rf ~/.vimrc
+fi
+
+#: restore config info
+if [ -d ~/.vim-old ]; then
+	mv ~/.vim-old ~/.vim
+fi
+if [ -f ~/.vimrc-old ]; then
+	mv ~/.vimrc-old ~/.vimrc
+fi
 
 echo "The uninstallation is complete!"
