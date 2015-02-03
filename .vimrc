@@ -127,7 +127,7 @@ filetype plugin indent on
 
 " show hidden files and dirs
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.o$', '\.swp$', '\.git', '\.svn']
+let NERDTreeIgnore=['.*\.o$', '.*\.ko$', '\~$', '\.swp$', '\.git$', '\.svn$', 'tags$', 'cscope.out$', '\.qtquickcompiler$', '.*\.user$', '.*_qtquickcompiler\.qrc$']
 
 " open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
