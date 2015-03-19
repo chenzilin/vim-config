@@ -152,7 +152,7 @@ let Tlist_Show_One_File = 1
 nnoremap <silent> <F3> :TlistToggle<CR>
 
 " auto flush taglist
-map <F4> :TlistUpdate<CR>
+map <F7> :TlistUpdate<CR>
 autocmd BufWritePost *.c,*.h,*.cpp call UpdateCtags()
 autocmd FileWritePost *.c,*.h,*.cpp call UpdateCtags()
 
