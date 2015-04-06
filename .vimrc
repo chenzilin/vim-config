@@ -67,8 +67,7 @@ set history=2000
 set tabstop=4
 set shiftwidth=4
 set cmdheight=2
-set list listchars=tab:>-
-set cmdheight=2
+set expandtab
 set smartcase
 set hlsearch
 set incsearch
@@ -82,6 +81,7 @@ set laststatus=2
 set autoread
 set autoindent
 set autowriteall
+set list listchars=tab:>-,trail:-
 
 " highlight current line and column
 set cursorline
