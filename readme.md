@@ -1,6 +1,8 @@
-my vim config
+![screenshot](screenshot.png)
 
-usage:
+My vim config
+
+Usage:
 
 install:
 
@@ -9,6 +11,3 @@ $: ./install.sh
 uninstall:
 
 $: ./uninstall.sh
-
-
-![screenshot](screenshot.png)
