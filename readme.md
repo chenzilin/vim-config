@@ -10,3 +10,5 @@ uninstall:
 
 $: ./uninstall.sh
 
+
+![screenshot](screenshot.png)
