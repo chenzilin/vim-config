@@ -63,11 +63,10 @@
 " ***************settings for base vim***************
 set ruler
 set number
-set history=2000
-set tabstop=4
-set shiftwidth=4
+set history=3000
+set tabstop=8
+set shiftwidth=8
 set cmdheight=2
-set expandtab
 set smartcase
 set hlsearch
 set incsearch
