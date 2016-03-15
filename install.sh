@@ -17,9 +17,11 @@ fi
 
 #: backup origin data
 if [ -d ~/.vim ]; then
+	rm -rf ~/.vim-old
 	mv ~/.vim ~/.vim-old
 fi
 if [ -f ~/.vimrc ]; then
+	rm -rf ~/.vimrc-old
 	mv ~/.vimrc ~/.vimrc-old
 fi
 
@@ -64,6 +66,11 @@ cp -rf taglist_46  ~/.vim/bundle
 
 #: install a
 cp -rf a_218 ~/.vim/bundle
+
+#: install bitbake syntax
+git clone https://github.com/openembedded/bitbake.git
+cp -rf bitbake/contrib/vim ~/.vim/bundle/bitbake
+
 
 cd /usr/include/
 ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/ctags-list/usr-include .
