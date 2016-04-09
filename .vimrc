@@ -78,7 +78,6 @@ set encoding=utf8
 set ffs=unix,dos,mac
 set laststatus=2
 set autoread
-set autoindent
 set autowriteall
 set list listchars=tab:>-,trail:-
 
@@ -93,26 +92,6 @@ hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
 "colorscheme blue
 
 " ***************settings for base vim***************
-
-" ***************settings for brackets complete***************
-":inoremap ( ()<ESC>i
-":inoremap ) <c-r>=ClosePair(')')<CR> " commented for echofunc
-:inoremap { {<CR>}<ESC>O
-:inoremap } <c-r>=ClosePair('}')<CR>
-:inoremap [ []<ESC>i
-:inoremap ] <c-r>=ClosePair(']')<CR>
-":inoremap " ""<ESC>i
-":inoremap ' ''<ESC>i
-
-function! ClosePair(char)
- if getline('.')[col('.') - 1] == a:char
-     return "\<Right>"
- else
-     return a:char
- endif
-endfunction 
-" ***************settings for brackets complete***************
-
 
 " ***************settings for pathogen***************
 execute pathogen#infect()

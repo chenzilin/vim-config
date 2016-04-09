@@ -70,7 +70,7 @@ cp -rf a_218 ~/.vim/bundle
 #: install bitbake syntax
 git clone https://github.com/openembedded/bitbake.git
 cp -rf bitbake/contrib/vim ~/.vim/bundle/bitbake
-
+rm -rf bitbake
 
 cd /usr/include/
 ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/ctags-list/usr-include .
