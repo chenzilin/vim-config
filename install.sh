@@ -72,6 +72,11 @@ git clone https://github.com/openembedded/bitbake.git
 cp -rf bitbake/contrib/vim ~/.vim/bundle/bitbake
 rm -rf bitbake
 
+#: install cpp-highlight syntax
+git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
+cp -rf vim-cpp-enhanced-highlight/after ~/.vim/bundle/cpp-highlight
+rm -rf vim-cpp-enhanced-highlight
+
 cd /usr/include/
 ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/ctags-list/usr-include .
 
