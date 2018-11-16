@@ -93,6 +93,7 @@ hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
 
 " ***************settings for base vim***************
 
+
 " ***************settings for pathogen***************
 execute pathogen#infect()
 filetype plugin indent on
@@ -204,26 +205,6 @@ if has('cscope')
     map <F6> :cclose<CR>
 endif
 " ***************settings for cscope***************
-
-" ***************settings for OmniCppComplete***************
-" OmniCppComplete
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
-" build tags of your own project with F5
-map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q . && cscope -Rb<CR>
-" generate local usr include
-set tags+=~/.vim/ctags-list/usr-include
-" ***************settings for OmniCppComplete***************
-
 
 " ***************settings for NERD Commenter***************
 let mapleader=","

@@ -8,8 +8,8 @@ else
 fi
 
 #: install base debs
-if which apt-get >/dev/null; then
-	sudo apt-get install -y vim exuberant-ctags cscope
+if which apt >/dev/null; then
+	sudo apt install -y vim exuberant-ctags cscope
 else
 	echo "Your computer system is not Ubuntu or Debian, the installation fails!"
 	exit 1
@@ -31,10 +31,10 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/ctags-list
 #: install .vimrc
 cp .vimrc ~/
 
-#: install pathogen
-git clone https://github.com/tpope/vim-pathogen.git
-cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
-rm -rf vim-pathogen
+#: install extra debs
+if which apt >/dev/null; then
+	sudo apt install -y vim-pathogen vim-bitbake vim-syntax-docker vim-youcompleteme
+fi
 
 #: install nerdtree
 git clone https://github.com/scrooloose/nerdtree.git
@@ -44,14 +44,6 @@ mv nerdtree ~/.vim/bundle/
 git clone https://github.com/mbbill/echofunc.git
 cp -rf echofunc/after ~/.vim/bundle/echofunc
 rm -rf echofunc
-
-#: install omnicppcomplete
-git clone https://github.com/FromtonRouge/OmniCppComplete.git
-mv OmniCppComplete ~/.vim/bundle/
-
-#: install auto_mkdir
-git clone https://github.com/DataWraith/auto_mkdir.git
-mv auto_mkdir ~/.vim/bundle/
 
 #: install qml syntax highlighting
 git clone https://github.com/peterhoeg/vim-qml.git
@@ -67,15 +59,6 @@ cp -rf taglist_46  ~/.vim/bundle
 #: install a
 cp -rf a_218 ~/.vim/bundle
 
-#: install bitbake syntax
-git clone https://github.com/openembedded/bitbake.git
-cp -rf bitbake/contrib/vim ~/.vim/bundle/bitbake
-rm -rf bitbake
-
-#: install cpp-highlight syntax
-git clone https://github.com/octol/vim-cpp-enhanced-highlight.git
-cp -rf vim-cpp-enhanced-highlight/after ~/.vim/bundle/cpp-highlight
-rm -rf vim-cpp-enhanced-highlight
 
 cd /usr/include/
 ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q  -f ~/.vim/ctags-list/usr-include .
